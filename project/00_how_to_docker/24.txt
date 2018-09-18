@@ -1,0 +1,5 @@
+docker pull rabbitmq
+
+docker run --hostname overmind --name orbital-command -e RABBITMQ_DEFAULT_USER=admin -e RABBITMQ_DEFAULT_PASS=12345 -d rabbitmq
+
+docker service create --hostname overmind --name orbital-command -e RABBITMQ_DEFAULT_USER=admin -e RABBITMQ_DEFAULT_PASS=12345 -d rabbitmq

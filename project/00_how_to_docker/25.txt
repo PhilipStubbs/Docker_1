@@ -1,0 +1,2 @@
+Docker service ls 
+Docker service ps NAME
