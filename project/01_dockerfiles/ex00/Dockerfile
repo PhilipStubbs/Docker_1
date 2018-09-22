@@ -1,11 +1,19 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Dockerfile                                         :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: pstubbs <pstubbs@student.42.fr>            +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2018/09/22 11:05:18 by pstubbs           #+#    #+#              #
+#    Updated: 2018/09/22 11:07:17 by pstubbs          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
 FROM alpine
 
-RUN apk update
-RUN	apk add vim
+RUN apk update && \
+	apk upgrade && \
+	apk add vim
 
-ENTRYPOINT ["vim"]
-# RUN ["/bin/bash", "-c", "vim hello_world.c"]
-
-
-# CMD ["", "vim hello_world.c"]
+ENTRYPOINT vim
