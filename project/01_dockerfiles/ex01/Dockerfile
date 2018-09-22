@@ -6,7 +6,7 @@
 #    By: pstubbs <pstubbs@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/22 11:07:07 by pstubbs           #+#    #+#              #
-#    Updated: 2018/09/22 14:32:41 by pstubbs          ###   ########.fr        #
+#    Updated: 2018/09/22 14:37:59 by pstubbs          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,3 +37,4 @@ ENTRYPOINT sh /home/teamspeak/ts3server_minimal_runscript.sh start
 
 # docker build . -t ex01
 # docker run -it --name ts -p 9987:9987/udp -p 30033:30033 -p10011:10011 --rm ex01
+# https://www.vultr.com/docs/how-to-install-teamspeak-3-server-on-ubuntu-16-04-64-bit
