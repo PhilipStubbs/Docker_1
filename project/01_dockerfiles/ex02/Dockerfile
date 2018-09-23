@@ -5,17 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: pstubbs <pstubbs@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2018/09/22 14:38:42 by pstubbs           #+#    #+#              #
-#    Updated: 2018/09/22 15:49:02 by pstubbs          ###   ########.fr        #
+#    Created: 2018/09/23 13:30:41 by pstubbs           #+#    #+#              #
+#    Updated: 2018/09/23 13:30:43 by pstubbs          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-FROM ruby
-
-RUN apt-get update
+FROM ft-rails:on-build
 
 EXPOSE 3000
+CMD [ "rails" , "s", "-b", "0.0.0.0", "-p", "3000"]
 
-# FROM        ft-rails:5.0.2-on-build
 
-# CMD         ["rails", "s", "-b", "0.0.0.0"]
+
+# https://github.com/rizkyario/42-docker-1
