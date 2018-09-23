@@ -6,7 +6,7 @@
 #    By: pstubbs <pstubbs@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/22 14:38:42 by pstubbs           #+#    #+#              #
-#    Updated: 2018/09/23 13:31:08 by pstubbs          ###   ########.fr        #
+#    Updated: 2018/09/23 16:28:47 by pstubbs          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,14 @@ RUN apt-get update -y && \
 
 EXPOSE 3000
 
+RUN mkdir -p /opt/app
+WORKDIR /opt/app
 
+ONBUILD ADD app /opt/app
+ONBUILD RUN bundle install
+# ONBUILD RUN rake db:migrate
+ONBUILD RUN rake db:setup
+ONBUILD RUN rake db:seed
 
 
 # # see http://guides.rubyonrails.org/command_line.html#rails-dbconsole
