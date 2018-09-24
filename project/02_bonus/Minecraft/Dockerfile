@@ -6,7 +6,7 @@
 #    By: pstubbs <pstubbs@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/23 15:16:55 by pstubbs           #+#    #+#              #
-#    Updated: 2018/09/23 16:15:35 by pstubbs          ###   ########.fr        #
+#    Updated: 2018/09/24 11:09:08 by pstubbs          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,13 +29,14 @@ COPY eula.txt /minecraft/eula.txt
 
 WORKDIR /minecraft
 
-ENTRYPOINT java -Xmx1024M -Xms1024M -jar minecraft_server.jar nogui
+ENTRYPOINT java -jar minecraft_server.jar nogui
+# ENTRYPOINT java -Xmx1024M -Xms1024M -jar minecraft_server.jar nogui
 
 
 # docker build . -t mc
 
 #For once off servers :
-# docker run --name mcserverTEST -p 25565:25565 --rm -it mc
+    # docker run --name mcserverTEST -p 25565:25565 --rm -it mc
 
 # For persistent world :
     # docker volume create --name minecraft-server

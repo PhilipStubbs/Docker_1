@@ -6,11 +6,14 @@
 #    By: pstubbs <pstubbs@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/23 16:30:16 by pstubbs           #+#    #+#              #
-#    Updated: 2018/09/23 19:01:14 by pstubbs          ###   ########.fr        #
+#    Updated: 2018/09/24 11:00:44 by pstubbs          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 FROM ubuntu
+
+EXPOSE 3000
+EXPOSE 8022
 
 RUN apt-get update -y && \
     apt-get upgrade -y && \
@@ -21,6 +24,13 @@ RUN apt-get update -y && \
 
 RUN wget https://dl.gogs.io/0.11.66/gogs_0.11.66_linux_amd64.tar.gz && \
     tar -xvf gogs_0.11.66_linux_amd64.tar.gz && \
-    cd gogs && \
-    ./gogs web
-    # https://www.youtube.com/watch?v=deSfX0gqefE&vl=en
+    cd gogs
+
+ENV USER=root
+
+WORKDIR /gogs
+
+ENTRYPOINT ./gogs web
+
+# docker build . -t ex03
+# docker run --name gogtest -p 3000:3000 --rm -it ex03
