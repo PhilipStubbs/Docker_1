@@ -1,2 +1,1 @@
-docker service logs marines
 Docker service ps marines
