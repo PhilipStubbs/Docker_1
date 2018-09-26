@@ -1,5 +1,0 @@
-$ docker-machine ssh Char
-
-docker swarm init --advertise-addr *CHARIP* <192.168.99.100>
-
-Docker node ls
